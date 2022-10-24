@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class BrickCounter : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private int brickCount;
 
-    // Update is called once per frame
-    void Update()
+    public void CountBrick()
     {
-        
+        brickCount++;
+        Debug.Log($"Total Bricks Removed: {brickCount}");
     }
 }
