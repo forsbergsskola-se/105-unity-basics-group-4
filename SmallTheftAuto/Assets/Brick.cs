@@ -7,12 +7,6 @@ public class Brick : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        transform.position += transform.right * Random.Range(-.1f, .1f);
     }
 }
