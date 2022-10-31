@@ -5,16 +5,6 @@ using UnityEngine;
 public class CarMovement : MonoBehaviour
 {
     public GameObject wheel;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     void FixedUpdate()
     {
         float rotation = Input.GetAxis("Horizontal");

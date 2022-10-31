@@ -1,11 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Vehicle : MonoBehaviour
-{
+{       
     public GameObject player;
     public CarMovement carMovement;
+                                                                                
+    
     
     void Start()
     {
@@ -16,7 +16,7 @@ public class Vehicle : MonoBehaviour
 
     bool EnterCarButtonPressed()
     {
-        return Input.GetKeyDown(KeyCode.F);
+        return Input.GetButtonDown("Input-Vehicle");
     } 
     bool PlayerIsInCar()
     {
@@ -61,6 +61,7 @@ public class Vehicle : MonoBehaviour
             }
             
         }
-        
+
     }
+    
 }
