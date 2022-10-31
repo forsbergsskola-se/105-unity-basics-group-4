@@ -30,13 +30,18 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             // translate the player's transform-component on the y-axis (which points up)
-            transform.Rotate(0f, -0.1f, 0f);
+            transform.Rotate(0f, -0.5f, 0f);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
             // translate the player's transform-component on the y-axis (which points up)
-            transform.Rotate(0f, 0.1f, 0f);
+            transform.Rotate(0f, 0.5f, 0f);
+        }
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            transform.Translate(0f, 0.00f, 2f);
         }
     }
 }
