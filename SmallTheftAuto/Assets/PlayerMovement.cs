@@ -19,7 +19,12 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             // translate the player's transform-component on the y-axis (which points up)
-            transform.Translate(0f, 0.00f, 1f);
+            transform.Translate(0f, 0.00f, 0.5f);
+            
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                transform.Translate(0f, 0.00f, 0.7f);
+            }
         }
 
         if (Input.GetKey(KeyCode.S))
@@ -38,11 +43,6 @@ public class PlayerMovement : MonoBehaviour
         {
             // translate the player's transform-component on the y-axis (which points up)
             transform.Rotate(0f, 0.7f, 0f);
-        }
-
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            transform.Translate(0f, 0.00f, 2f);
         }
     }
 }
