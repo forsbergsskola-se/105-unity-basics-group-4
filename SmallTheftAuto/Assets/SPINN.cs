@@ -14,6 +14,6 @@ public class SPINN : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.RotateAround(target.transform.position, Vector3.up, 30 * Time.deltaTime);
+        transform.RotateAround(target.transform.position, Vector3.up, 15 * Time.deltaTime);
     }
 }
