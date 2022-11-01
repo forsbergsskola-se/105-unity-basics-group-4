@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         QualitySettings.vSyncCount = 0; // VSync must be disabled
+        Debug.Log(Application.targetFrameRate);
         Application.targetFrameRate = 60;
     }
 
@@ -19,30 +20,30 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             // translate the player's transform-component on the y-axis (which points up)
-            transform.Translate(0f, 0.00f, 0.5f);
+            transform.Translate(0f, 0.00f, 30f*Time.deltaTime);
             
             if (Input.GetKey(KeyCode.LeftShift))
             {
-                transform.Translate(0f, 0.00f, 0.7f);
+                transform.Translate(0f, 0.00f, 45f*Time.deltaTime);
             }
         }
 
         if (Input.GetKey(KeyCode.S))
         {
             // translate the player's transform-component on the y-axis (which points up)
-            transform.Translate(0f, 0.00f, -1f);
+            transform.Translate(0f, 0.00f, -30f*Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
             // translate the player's transform-component on the y-axis (which points up)
-            transform.Rotate(0f, -0.7f, 0f);
+            transform.Rotate(0f, -42f*Time.deltaTime, 0f);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
             // translate the player's transform-component on the y-axis (which points up)
-            transform.Rotate(0f, 0.7f, 0f);
+            transform.Rotate(0f, 42f*Time.deltaTime, 0f);
         }
     }
 }
