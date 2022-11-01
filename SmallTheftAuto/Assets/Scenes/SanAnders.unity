@@ -123,6 +123,54 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &183919294
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 183919296}
+  - component: {fileID: 183919295}
+  m_Layer: 0
+  m_Name: Parking Spot (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &183919295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183919294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 533b37c4c008432489597fb0ed1cb3bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasCar: 1
+  carPrefab: {fileID: 2218345603707582121, guid: f4e01489061483248bf68fd1be3b811b, type: 3}
+  player: {fileID: 1067018937}
+  playerScript: {fileID: 1067018938}
+--- !u!4 &183919296
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183919294}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: -9.12}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &342744542
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,8 +493,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasCar: 1
-  carPrefab: {fileID: 2218345603707582124, guid: f4e01489061483248bf68fd1be3b811b, type: 3}
-  player: {fileID: 0}
+  carPrefab: {fileID: 2218345603707582121, guid: f4e01489061483248bf68fd1be3b811b, type: 3}
+  player: {fileID: 1067018937}
+  playerScript: {fileID: 1067018938}
 --- !u!4 &972815658
 Transform:
   m_ObjectHideFlags: 0
@@ -455,12 +504,60 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 972815656}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.76, z: -13.82}
+  m_LocalPosition: {x: 0, y: 2, z: -13.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &976363691
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 976363693}
+  - component: {fileID: 976363692}
+  m_Layer: 0
+  m_Name: Parking Spot (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &976363692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976363691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 533b37c4c008432489597fb0ed1cb3bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasCar: 1
+  carPrefab: {fileID: 2218345603707582121, guid: f4e01489061483248bf68fd1be3b811b, type: 3}
+  player: {fileID: 1067018937}
+  playerScript: {fileID: 1067018938}
+--- !u!4 &976363693
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976363691}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.98, y: 2, z: -15.31}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1067018937
 GameObject:
@@ -493,6 +590,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: 12
   mainCamera: {fileID: 1807411234}
+  vehicle: {fileID: 2218345603707582121, guid: f4e01489061483248bf68fd1be3b811b, type: 3}
+  cars: []
+  closestCar: 0
 --- !u!4 &1067018939
 Transform:
   m_ObjectHideFlags: 0
@@ -606,7 +706,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
 --- !u!1 &1803595828
 GameObject:
@@ -897,66 +997,51 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1001 &2218345603064821911
-PrefabInstance:
+--- !u!1 &2128891486
+GameObject:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 2
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2218345603707582121, guid: f4e01489061483248bf68fd1be3b811b, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1067018937}
-    - target: {fileID: 2218345603707582123, guid: f4e01489061483248bf68fd1be3b811b, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2218345603707582123, guid: f4e01489061483248bf68fd1be3b811b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2218345603707582123, guid: f4e01489061483248bf68fd1be3b811b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.14
-      objectReference: {fileID: 0}
-    - target: {fileID: 2218345603707582123, guid: f4e01489061483248bf68fd1be3b811b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -8.49
-      objectReference: {fileID: 0}
-    - target: {fileID: 2218345603707582123, guid: f4e01489061483248bf68fd1be3b811b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2218345603707582123, guid: f4e01489061483248bf68fd1be3b811b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2218345603707582123, guid: f4e01489061483248bf68fd1be3b811b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2218345603707582123, guid: f4e01489061483248bf68fd1be3b811b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2218345603707582123, guid: f4e01489061483248bf68fd1be3b811b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2218345603707582123, guid: f4e01489061483248bf68fd1be3b811b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2218345603707582123, guid: f4e01489061483248bf68fd1be3b811b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2218345603707582124, guid: f4e01489061483248bf68fd1be3b811b, type: 3}
-      propertyPath: m_Name
-      value: Car
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_AddedGameObjects: []
-  m_SourcePrefab: {fileID: 100100000, guid: f4e01489061483248bf68fd1be3b811b, type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2128891488}
+  - component: {fileID: 2128891487}
+  m_Layer: 0
+  m_Name: Parking Spot (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2128891487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128891486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 533b37c4c008432489597fb0ed1cb3bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasCar: 1
+  carPrefab: {fileID: 2218345603707582121, guid: f4e01489061483248bf68fd1be3b811b, type: 3}
+  player: {fileID: 1067018937}
+  playerScript: {fileID: 1067018938}
+--- !u!4 &2128891488
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128891486}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.98, y: 2, z: -9.12}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
