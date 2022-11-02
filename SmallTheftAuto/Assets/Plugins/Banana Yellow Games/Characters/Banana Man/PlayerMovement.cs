@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -10,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody rb;
     public float moveSpeed;
     public float sprintSpeed;
+    public Camera cam;
     void Start()
     {
         
@@ -35,5 +37,9 @@ public class PlayerMovement : MonoBehaviour
         {
             sprintSpeed = 1;
         }
+        
+        
+
+
     }
 }
