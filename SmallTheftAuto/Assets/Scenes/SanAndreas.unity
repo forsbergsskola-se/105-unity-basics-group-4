@@ -331,7 +331,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 972241391}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 5.45, z: -0.77}
+  m_LocalPosition: {x: 0, y: 10, z: -0.77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -428,11 +428,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1173089387}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5eec40cf2d807a74eb6d1a442ded7237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vehicles: []
   lengthAwayFromPlayer: 2
 --- !u!1 &1356463838 stripped
 GameObject:
@@ -485,7 +486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 790b7e39e3e08ae49ba9da1e12f0a8e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 50
+  movementSpeed: 25
   maxSpeed: 50
   rotationSpeed: 5
   rigidBody: {fileID: 1416108627}
@@ -514,7 +515,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f056dfc13eca2949a60af7a7b6d99a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1173089387}
+  car: {fileID: 1416108623}
 --- !u!1 &1421487927
 GameObject:
   m_ObjectHideFlags: 0
