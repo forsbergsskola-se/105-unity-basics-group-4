@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 
-public class Driver : MonoBehaviour
+/*public class Driver : MonoBehaviour
 {
     Vehicle [] vehicles;
     public float lengthAwayFromPlayer;
@@ -12,6 +12,12 @@ public class Driver : MonoBehaviour
     {
         if (EnterCarButtonPressed() && IsPlayerCloseEnough())
             vehicles[0].Enter();
+
+        else
+        {
+            if (playerIsInCar)
+            vehicles[0].Exit();
+        }
     } 
     bool EnterCarButtonPressed()
     {
@@ -30,4 +36,14 @@ public class Driver : MonoBehaviour
             return true;
         return false;
     }
-}
+    
+    public bool playerIsInCar()
+    {
+        if (gameObject.activeInHierarchy)
+        {
+            return false;
+        }
+
+        return true;
+    }
+}*/
