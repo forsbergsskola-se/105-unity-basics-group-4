@@ -16,7 +16,6 @@ public class Buttons : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
-        EditorApplication.Exit(0);
     }
 
     public void NextLevel()
