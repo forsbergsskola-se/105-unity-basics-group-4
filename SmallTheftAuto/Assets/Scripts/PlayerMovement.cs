@@ -22,7 +22,9 @@ public class PlayerMovement : MonoBehaviour
     {
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
+        
         rb.velocity = new Vector3(x*moveSpeed*sprintSpeed, rb.velocity.y, z*moveSpeed*sprintSpeed);
+        
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -38,6 +40,8 @@ public class PlayerMovement : MonoBehaviour
             sprintSpeed = 1;
         }
         
+        Quaternion lookAtRotation = Quaternion.LookRotation(rb.velocity);
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, lookAtRotation.eulerAngles.y, transform.rotation.eulerAngles.z);
         
 
 
