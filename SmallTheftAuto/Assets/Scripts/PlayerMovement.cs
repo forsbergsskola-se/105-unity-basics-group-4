@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed;
     public float sprintSpeed;
     public Camera cam;
+    private float velocity;
+    public float rotationSmoothness;
     void Start()
     {
         
@@ -40,8 +42,16 @@ public class PlayerMovement : MonoBehaviour
             sprintSpeed = 1;
         }
         
+        //Rotates the body towards its moving direction with a certain rotationSmoothness delay.
         Quaternion lookAtRotation = Quaternion.LookRotation(rb.velocity);
-        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, lookAtRotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+
+        if (rb.velocity.magnitude > 0)
+        {
+            float yAngle = Mathf.SmoothDampAngle(transform.rotation.eulerAngles.y, lookAtRotation.eulerAngles.y, ref velocity, rotationSmoothness);
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, yAngle, transform.rotation.z);
+
+        }
+
         
 
 

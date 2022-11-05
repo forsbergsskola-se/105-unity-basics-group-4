@@ -1118,6 +1118,7 @@ MonoBehaviour:
   moveSpeed: 2
   sprintSpeed: 0
   cam: {fileID: 972241393}
+  rotationSmoothness: 0.3
 --- !u!54 &1173089391
 Rigidbody:
   m_ObjectHideFlags: 0
