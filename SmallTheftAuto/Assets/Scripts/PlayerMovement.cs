@@ -14,13 +14,22 @@ public class PlayerMovement : MonoBehaviour
     public Camera cam;
     private float velocity;
     public float rotationSmoothness;
+    private float yAngle;
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.velocity = new Vector3(rb.velocity.x, 5, rb.velocity.z);
+        }
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
     {
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
@@ -28,10 +37,6 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector3(x*moveSpeed*sprintSpeed, rb.velocity.y, z*moveSpeed*sprintSpeed);
         
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            rb.velocity = new Vector3(rb.velocity.x, 5, rb.velocity.z);
-        }
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -43,12 +48,12 @@ public class PlayerMovement : MonoBehaviour
         }
         
         //Rotates the body towards its moving direction with a certain rotationSmoothness delay.
-        Quaternion lookAtRotation = Quaternion.LookRotation(rb.velocity);
 
         if (rb.velocity.magnitude > 0)
         {
-            float yAngle = Mathf.SmoothDampAngle(transform.rotation.eulerAngles.y, lookAtRotation.eulerAngles.y, ref velocity, rotationSmoothness);
-            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, yAngle, transform.rotation.z);
+            Quaternion lookAtRotation = Quaternion.LookRotation(rb.velocity);
+            yAngle = Mathf.SmoothDampAngle(yAngle, lookAtRotation.eulerAngles.y, ref velocity, rotationSmoothness, float.PositiveInfinity, Time.fixedDeltaTime);
+            rb.rotation = Quaternion.Euler(0, yAngle, 0);
 
         }
 
