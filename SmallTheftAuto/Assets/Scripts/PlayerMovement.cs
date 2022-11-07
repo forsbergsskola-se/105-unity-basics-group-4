@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour
@@ -15,6 +16,9 @@ public class PlayerMovement : MonoBehaviour
     private float velocity;
     public float rotationSmoothness;
     private float yAngle;
+
+    public UnityEvent<bool> IsWalkingChanged;
+    
     void Start()
     {
         
@@ -33,6 +37,9 @@ public class PlayerMovement : MonoBehaviour
     {
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
+        
+        
+        IsWalkingChanged.Invoke(Mathf.Abs(x) > 0.1);
         
         rb.velocity = new Vector3(x*moveSpeed*sprintSpeed, rb.velocity.y, z*moveSpeed*sprintSpeed);
         
@@ -54,7 +61,6 @@ public class PlayerMovement : MonoBehaviour
             Quaternion lookAtRotation = Quaternion.LookRotation(rb.velocity);
             yAngle = Mathf.SmoothDampAngle(yAngle, lookAtRotation.eulerAngles.y, ref velocity, rotationSmoothness, float.PositiveInfinity, Time.fixedDeltaTime);
             rb.rotation = Quaternion.Euler(0, yAngle, 0);
-
         }
 
         
