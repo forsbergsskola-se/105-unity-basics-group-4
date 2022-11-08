@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PlayerStats : MonoBehaviour
+public class PlayerStats : MonoBehaviour, ITakeDamage
 {
     
     public TMP_Text text; 
@@ -15,4 +15,9 @@ public class PlayerStats : MonoBehaviour
     {
         text.SetText(Convert.ToString($"Health:{health}"));
 }
+
+    public void takedamage(int damagedealt)
+    {
+        health = -damagedealt;
+    }
 }    

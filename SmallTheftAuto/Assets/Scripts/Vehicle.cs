@@ -11,6 +11,7 @@ public class Vehicle : MonoBehaviour, ITakeDamage
     public GameObject car;
     public int Health;
     public int MaxHealth;
+
     private void Start()
     {
         player = FindObjectOfType<PlayerMovement>().gameObject;
@@ -21,6 +22,7 @@ public class Vehicle : MonoBehaviour, ITakeDamage
     void Update()
     {
         EnterCarButtonPressed();
+        damagetesting();
     }
 
     // ReSharper disable Unity.PerformanceAnalysis
@@ -45,6 +47,7 @@ public class Vehicle : MonoBehaviour, ITakeDamage
 
             return true;
         }
+
         void EnterCar()
         {
             player.SetActive(false);
@@ -75,23 +78,22 @@ public class Vehicle : MonoBehaviour, ITakeDamage
             carMovement.enabled = false;
         }*/
     }
+
+    void damagetesting()
+    {
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            takedamage(10);
+        }
+    }
+
     public void takedamage(int damagedealt)
     {
         Health -= damagedealt;
-        if (Health < 0 && Health > MaxHealth/4)
-        {
-            Health -= Convert.ToInt32(Time.deltaTime); //starts 'car burning down'
-            //todo: implement fire graphic, damage in area
-        }
 
         if (Health <= 0)
         {
             
         }
-    }
-
-    public void Explosion()
-    {
-        //todo: implement explosion radius, instakill if inside car
     }
 }
