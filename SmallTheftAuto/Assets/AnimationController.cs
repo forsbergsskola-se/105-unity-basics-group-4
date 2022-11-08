@@ -15,7 +15,10 @@ public class AnimationController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        if (Input.GetKey("w"))
+        {
+            animator.SetBool("isWalking", true);
+        }
     }
 }
 

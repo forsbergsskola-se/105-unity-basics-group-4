@@ -16,8 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private float velocity;
     public float rotationSmoothness;
     private float yAngle;
-
-    public UnityEvent<bool> IsWalkingChanged;
+    
     
     void Start()
     {
@@ -38,8 +37,6 @@ public class PlayerMovement : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
         
-        
-        IsWalkingChanged.Invoke(Mathf.Abs(x) > 0.1);
         
         rb.velocity = new Vector3(x*moveSpeed*sprintSpeed, rb.velocity.y, z*moveSpeed*sprintSpeed);
         
