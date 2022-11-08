@@ -5,8 +5,7 @@ using UnityEngine;
 public class AnimationController : MonoBehaviour
 {
     private Animator animator;
-    private static readonly int IsWalking = Animator.StringToHash("isWalking");
-
+   
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -18,7 +17,7 @@ public class AnimationController : MonoBehaviour
     {
         if (Input.GetKey("w"))
         {
-            animator.SetBool(IsWalking, true);
+            animator.SetBool("isWalking", true);
         }
     }
 }
