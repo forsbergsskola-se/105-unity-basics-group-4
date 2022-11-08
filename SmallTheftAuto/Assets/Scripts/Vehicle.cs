@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class Vehicle : MonoBehaviour, ITakeDamage
@@ -11,7 +12,8 @@ public class Vehicle : MonoBehaviour, ITakeDamage
     public GameObject car;
     public int Health;
     public int MaxHealth;
-
+    public GameObject firefab;
+    private bool BurningDownRunning;
     private void Start()
     {
         player = FindObjectOfType<PlayerMovement>().gameObject;
@@ -90,10 +92,28 @@ public class Vehicle : MonoBehaviour, ITakeDamage
     public void takedamage(int damagedealt)
     {
         Health -= damagedealt;
+        if (Health <= 50&& !BurningDownRunning)
+        {
+            StartCoroutine(burningdown());
+        }
 
         if (Health <= 0)
         {
-            
+            Instantiate(firefab, this.transform.position, quaternion.identity);
         }
+    }
+
+    IEnumerator burningdown()
+    {
+        while (Health>0)
+        {
+            BurningDownRunning = true;
+            yield return new WaitForSeconds(1f);
+            takedamage(5);
+            GameObject carfire = Instantiate(firefab, this.transform.position, quaternion.identity);
+            carfire.transform.parent = gameObject.transform;
+        }
+
+        BurningDownRunning = false;
     }
 }
