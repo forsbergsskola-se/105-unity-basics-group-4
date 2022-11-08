@@ -9,9 +9,9 @@ public class Fire : MonoBehaviour
     {
         
     }
-
+    IEnumerator selfdestruct()
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         
     }
