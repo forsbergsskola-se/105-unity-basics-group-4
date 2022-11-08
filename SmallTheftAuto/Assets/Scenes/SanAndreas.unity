@@ -667,6 +667,9 @@ MonoBehaviour:
   sprintSpeed: 0
   cam: {fileID: 972241393}
   rotationSmoothness: 0.3
+  IsWalkingChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!54 &1173089391
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -979,6 +982,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1173089387}
   car: {fileID: 1416108623}
+  Health: 0
+  MaxHealth: 100
 --- !u!64 &1416108634
 MeshCollider:
   m_ObjectHideFlags: 0
