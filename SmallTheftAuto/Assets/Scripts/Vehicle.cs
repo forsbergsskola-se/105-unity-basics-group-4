@@ -8,6 +8,7 @@ public class Vehicle : MonoBehaviour, ITakeDamage
 {
 
     public GameObject player;
+    public PlayerStats playerstats;
     private CarMovementScript carMovement;
     public GameObject car;
     public int Health;
@@ -18,6 +19,7 @@ public class Vehicle : MonoBehaviour, ITakeDamage
     private void Start()
     {
         player = FindObjectOfType<PlayerMovement>().gameObject;
+        playerstats = FindObjectOfType<PlayerStats>();
         carMovement = GetComponent<CarMovementScript>();
         Health = MaxHealth;
     }
@@ -111,7 +113,7 @@ public class Vehicle : MonoBehaviour, ITakeDamage
         yield return new WaitForSeconds(2f);
         Instantiate(firefab, this.transform.position, quaternion.identity);
         Destroy(car);
-        
+        playerstats.CarDestroyed();
     }
 
     IEnumerator burningdown()

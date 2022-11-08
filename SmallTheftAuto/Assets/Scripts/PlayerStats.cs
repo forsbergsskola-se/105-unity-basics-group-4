@@ -22,7 +22,7 @@ public class PlayerStats : MonoBehaviour, ITakeDamage
         health = -damagedealt;
     }
 
-    public void CarDead()
+    public void CarDestroyed()
     {
         CarsDestroyed++;
     }
