@@ -16,5 +16,8 @@ public class AnimationController : MonoBehaviour
     {
         bool walkForward = GetComponent<Rigidbody>().velocity.magnitude > 0.3;
         animator.SetBool("isWalking", walkForward);
+        
+        bool runForward = GetComponent<Rigidbody>().velocity.magnitude > 0.5;
+        animator.SetBool("isRunning", runForward);
     }
 }
