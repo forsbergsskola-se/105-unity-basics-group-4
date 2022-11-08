@@ -1717,6 +1717,10 @@ PrefabInstance:
       propertyPath: buttonHolder
       value: 
       objectReference: {fileID: 1523359681}
+    - target: {fileID: 5955197859032155940, guid: a9ab1fed26c2c2a4c98f848b4a0a7791, type: 3}
+      propertyPath: phoneDistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5955197859032155941, guid: a9ab1fed26c2c2a4c98f848b4a0a7791, type: 3}
       propertyPath: m_Name
       value: Phone Box
