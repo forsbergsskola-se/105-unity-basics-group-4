@@ -1,8 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class PhoneBoxScript : MonoBehaviour
 {
@@ -29,6 +32,7 @@ public class PhoneBoxScript : MonoBehaviour
     {
         buttonHolder.SetActive(true);
         int random = Random.Range(1, 4);
+        
 
     }
 
@@ -38,4 +42,10 @@ public class PhoneBoxScript : MonoBehaviour
         button.GetComponentInChildren<TMP_Text>().SetText($""); 
     }
 
+}
+
+public class Quest
+{
+    private string _name;
+    private int _reward;
 }
