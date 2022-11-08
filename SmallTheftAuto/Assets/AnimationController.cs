@@ -15,7 +15,7 @@ public class AnimationController : MonoBehaviour
     void Update()
     {
         bool isWalking = animator.GetBool("isWalking");
-        bool walkForward = Input.GetKey("w");
+        bool walkForward = Input.GetKey(KeyCode.W);
 
         if (!isWalking && walkForward)
         {
