@@ -11,14 +11,20 @@ public class AnimationController : MonoBehaviour
         animator = GetComponent<Animator>();
         Debug.Log(animator);
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
-        if (Input.GetKey("w"))
+        bool isWalking = animator.GetBool("isWalking");
+        bool walkForward = Input.GetKey("w");
+
+        if (!isWalking && walkForward)
         {
             animator.SetBool("isWalking", true);
         }
+
+        if (isWalking && !walkForward)
+        {
+            animator.SetBool("isWalking", false);
+        }
     }
 }
-
