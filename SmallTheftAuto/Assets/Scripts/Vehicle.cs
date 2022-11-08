@@ -16,8 +16,10 @@ public class Vehicle : MonoBehaviour, ITakeDamage
     public GameObject firefab;
     public GameObject explofab;
     private bool BurningDownRunning;
+    public GameObject checkforplayer;
     private void Start()
     {
+        checkforplayer = GameObject.FindWithTag("Player");
         player = FindObjectOfType<PlayerMovement>().gameObject;
         playerstats = FindObjectOfType<PlayerStats>();
         carMovement = GetComponent<CarMovementScript>();
@@ -111,6 +113,11 @@ public class Vehicle : MonoBehaviour, ITakeDamage
         BurningDownRunning = false;
         Instantiate(explofab, this.transform.position, quaternion.identity);
         yield return new WaitForSeconds(2f);
+        
+        if (!checkforplayer.activeInHierarchy) //checks if player is outside the car or not, needs improving
+        { playerstats.takedamage(200); } //deals a bunch of damage to the player if they're in car
+        //technically, this is not needed at the moment, since the player gets deleted when the car disappears.
+        
         Instantiate(firefab, this.transform.position, quaternion.identity);
         Destroy(car);
         playerstats.CarDestroyed();
