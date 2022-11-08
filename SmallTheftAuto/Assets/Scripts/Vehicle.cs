@@ -13,6 +13,7 @@ public class Vehicle : MonoBehaviour, ITakeDamage
     public int Health;
     public int MaxHealth;
     public GameObject firefab;
+    public GameObject explofab;
     private bool BurningDownRunning;
     private void Start()
     {
@@ -99,8 +100,18 @@ public class Vehicle : MonoBehaviour, ITakeDamage
 
         if (Health <= 0)
         {
-            Instantiate(firefab, this.transform.position, quaternion.identity);
+            StartCoroutine(CarExplode());
         }
+    }
+
+    IEnumerator CarExplode()
+    {
+        BurningDownRunning = false;
+        Instantiate(explofab, this.transform.position, quaternion.identity);
+        yield return new WaitForSeconds(2f);
+        Instantiate(firefab, this.transform.position, quaternion.identity);
+        Destroy(car);
+        
     }
 
     IEnumerator burningdown()

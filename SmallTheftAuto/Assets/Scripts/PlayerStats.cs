@@ -10,6 +10,7 @@ public class PlayerStats : MonoBehaviour, ITakeDamage
     
     public TMP_Text text; 
     int health = 100;
+    public int CarsDestroyed;
 
     private void Update()
     {
@@ -19,5 +20,10 @@ public class PlayerStats : MonoBehaviour, ITakeDamage
     public void takedamage(int damagedealt)
     {
         health = -damagedealt;
+    }
+
+    public void CarDead()
+    {
+        CarsDestroyed++;
     }
 }    
