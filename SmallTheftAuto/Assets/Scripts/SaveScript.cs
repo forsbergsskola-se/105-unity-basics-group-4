@@ -14,7 +14,7 @@ public class SaveScript : MonoBehaviour
  
      private void OnTriggerStay(Collider collision)
      {
-         if (collision.CompareTag("Player") && phoneBoxScript.quest == null ||collision.CompareTag("Player") && phoneBoxScript.quest.ClearConditon() )
+         if (collision.CompareTag("Player") && phoneBoxScript.HasNoActiveQuest)
          {
              Save();
              print("colliding");

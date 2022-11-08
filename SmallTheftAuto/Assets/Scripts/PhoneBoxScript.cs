@@ -15,6 +15,7 @@ public class PhoneBoxScript : MonoBehaviour
     public Quest quest;
 
     private string questName;
+    public bool HasNoActiveQuest => quest?.ClearConditon() != false;
     void Start()
     {
         buttonHolder.SetActive(false);
@@ -26,7 +27,7 @@ public class PhoneBoxScript : MonoBehaviour
         {
               //interaction logic here.
               buttonHolder.SetActive(true);
-              if (quest?.ClearConditon() is not false)
+              if (HasNoActiveQuest)
               {
                   quest = GetQuest();
                   TMP_Text[] buttonDisplay = buttonHolder.GetComponentsInChildren<TMP_Text>();
