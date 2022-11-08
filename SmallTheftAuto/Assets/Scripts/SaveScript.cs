@@ -1,21 +1,27 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SaveScript : MonoBehaviour
-{
-    public PhoneBoxScript phoneBoxScript;
-
-    private void OnTriggerStay(Collider collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            Save();
-            print("colliding");
-
-        }
-    }
+{public PhoneBoxScript phoneBoxScript;
+ 
+     void Start()
+     {
+         phoneBoxScript = FindObjectOfType<PhoneBoxScript>();
+     }
+ 
+     private void OnTriggerStay(Collider collision)
+     {
+         if (collision.CompareTag("Player") && phoneBoxScript.quest == null ||collision.CompareTag("Player") && phoneBoxScript.quest.ClearConditon() )
+         {
+             Save();
+             print("colliding");
+ 
+         }
+     }
+    
 
     void Save()
     {

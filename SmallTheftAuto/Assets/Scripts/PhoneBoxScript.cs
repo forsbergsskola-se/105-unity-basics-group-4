@@ -12,7 +12,7 @@ public class PhoneBoxScript : MonoBehaviour
     public Transform player;
     public int phoneDistance;
     public GameObject buttonHolder;
-    private Quest quest;
+    public Quest quest;
 
     private string questName;
     void Start()
@@ -107,7 +107,7 @@ public class KillingQuest : Quest, IClearable
     
     public override bool ClearConditon()
     {
-        if (victims == 3)
+        if (victims == 4)
         {
             return true;
         }
