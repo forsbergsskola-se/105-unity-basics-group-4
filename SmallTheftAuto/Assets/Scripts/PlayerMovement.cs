@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
@@ -16,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private float velocity;
     public float rotationSmoothness;
     private float yAngle;
+    public GunController Gun;
     
     
     void Start()
@@ -28,6 +30,16 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             rb.velocity = new Vector3(rb.velocity.x, 5, rb.velocity.z);
+        }
+        
+        //Shooting controll
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            Gun.isFiring = true;
+        }
+        else
+        {
+            Gun.isFiring = false;
         }
     }
 
