@@ -16,10 +16,8 @@ public class Vehicle : MonoBehaviour, ITakeDamage
     public GameObject firefab;
     public GameObject explofab;
     private bool BurningDownRunning;
-    public GameObject checkforplayer;
     private void Start()
     {
-        checkforplayer = GameObject.FindWithTag("Player");
         player = FindObjectOfType<PlayerMovement>().gameObject;
         playerstats = FindObjectOfType<PlayerStats>();
         carMovement = GetComponent<CarMovementScript>();
