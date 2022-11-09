@@ -36,7 +36,7 @@ public class PhoneBoxScript : MonoBehaviour
               
         }
 
-        if (quest.ClearConditon())
+        if (quest?.ClearConditon() == true)
         {
             //Logic when quest is completed. rewards,xp,money.etc
         }

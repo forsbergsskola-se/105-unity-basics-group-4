@@ -9,10 +9,6 @@ public class CarMovementScript : MonoBehaviour
     public float rotationSpeed;
     public Rigidbody rigidBody;
     public bool isgrounded;
-    private void OnCollisionEnter()
-    {
-        isgrounded = true;
-    }
     private void OnCollisionStay()
     {
         isgrounded = true;
