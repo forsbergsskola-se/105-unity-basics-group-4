@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private float velocity;
     public float rotationSmoothness;
     private float yAngle;
+    public GunController Gun;
     
     
     void Start()
@@ -28,6 +29,17 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             rb.velocity = new Vector3(rb.velocity.x, 5, rb.velocity.z);
+        }
+        
+        //Shooting controll
+        if (Input.GetMouseButtonDown(0))
+        {
+            Gun.isFiring = true;
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                Gun.isFiring = false;
+            }
         }
     }
 
