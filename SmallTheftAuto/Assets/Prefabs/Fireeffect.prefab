@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6068087263064609911}
   - component: {fileID: 6068627754682671357}
+  - component: {fileID: -911316675737853205}
   m_Layer: 0
   m_Name: Fireeffect
   m_TagString: Untagged
@@ -46,6 +47,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firetimer: 10
+  playertriggering: 0
+  burningplayer: 0
+--- !u!135 &-911316675737853205
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6069609072187456105}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6069609073440914985
 GameObject:
   m_ObjectHideFlags: 0
