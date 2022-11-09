@@ -8,7 +8,7 @@ public class Vehicle : MonoBehaviour, ITakeDamage
 {
 
     public GameObject player;
-    public PlayerStats playerstats;
+    private PlayerStats playerstats;
     private CarMovementScript carMovement;
     public GameObject car;
     public int Health;

@@ -7,8 +7,8 @@ using UnityEngine;
 public class Fire : MonoBehaviour
 {
     public float firetimer;
-    public bool playertriggering;
-    public bool burningplayer;
+    private bool playertriggering;
+    private bool burningplayer;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +20,7 @@ public class Fire : MonoBehaviour
         yield return new WaitForSeconds(firetimer);
         Destroy(gameObject);
     }
-    public void OnTriggerStay(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         PlayerStats playerStats = FindObjectOfType<PlayerStats>();
         if (other.gameObject.CompareTag("Player"))
@@ -33,7 +33,7 @@ public class Fire : MonoBehaviour
         }
     }
 
-    public void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
