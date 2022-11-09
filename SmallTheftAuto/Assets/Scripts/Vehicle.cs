@@ -32,6 +32,25 @@ public class Vehicle : MonoBehaviour, ITakeDamage
         damagetesting();
     }
 
+    bool PlayerIsInCar()
+    {
+        if (player.activeInHierarchy)
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+    void LeaveCar()
+    {
+        player.SetActive(true);
+        player.transform.position = car.transform.position + new Vector3(2, 0, 0);
+        carMovement.enabled = false;
+    }
+    //placed PlayerIsInCar and LeaveCar outside of EnterCarButtonPressed due to access need in explosion script.
+    //entering/exiting car still works as normal - if not, check move of functions for bugs.
+    
     // ReSharper disable Unity.PerformanceAnalysis
     void EnterCarButtonPressed()
     {
@@ -45,15 +64,7 @@ public class Vehicle : MonoBehaviour, ITakeDamage
                 EnterCar();
         }
 
-        bool PlayerIsInCar()
-        {
-            if (player.activeInHierarchy)
-            {
-                return false;
-            }
-
-            return true;
-        }
+        PlayerIsInCar();
 
         void EnterCar()
         {
@@ -61,12 +72,7 @@ public class Vehicle : MonoBehaviour, ITakeDamage
             carMovement.enabled = true;
         }
 
-        void LeaveCar()
-        {
-            player.SetActive(true);
-            player.transform.position = car.transform.position + new Vector3(2, 0, 0);
-            carMovement.enabled = false;
-        }
+        
 
 
         // Update is called once per frame
@@ -112,11 +118,13 @@ public class Vehicle : MonoBehaviour, ITakeDamage
     {
         BurningDownRunning = false;
         Instantiate(explofab, this.transform.position, quaternion.identity);
-        yield return new WaitForSeconds(2f);
-        
-        if (!checkforplayer.activeInHierarchy) //checks if player is outside the car or not, needs improving
-        { playerstats.takedamage(200); } //deals a bunch of damage to the player if they're in car
-        //technically, this is not needed at the moment, since the player gets deleted when the car disappears.
+        yield return new WaitForSeconds(1f);
+
+        if (PlayerIsInCar())    //checks if player is outside the car or not.
+        {
+            LeaveCar();         //kicks player out of car to prevent player model being destroyed. for now.
+            playerstats.takedamage(200);    //deals a bunch of damage to the player if they're in car
+        } 
         
         Instantiate(firefab, this.transform.position, quaternion.identity);
         Destroy(car);
