@@ -11,11 +11,10 @@ public class AnimationController : MonoBehaviour
         animator = GetComponent<Animator>();
         Debug.Log(animator);
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
-       
+        bool walkForward = GetComponent<Rigidbody>().velocity.magnitude > 0.3;
+        animator.SetBool("isWalking", walkForward);
     }
 }
-

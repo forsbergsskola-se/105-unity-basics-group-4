@@ -22,4 +22,10 @@ public class Buttons : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
+    public void ResetScore()
+    {
+        PlayerPrefs.SetFloat("Health", 0);
+        PlayerPrefs.SetInt("Money", 0);
+    }
 }
