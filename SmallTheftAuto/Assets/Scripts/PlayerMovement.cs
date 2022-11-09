@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
@@ -32,14 +33,13 @@ public class PlayerMovement : MonoBehaviour
         }
         
         //Shooting controll
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Gun.isFiring = true;
-
-            if (Input.GetMouseButtonUp(0))
-            {
-                Gun.isFiring = false;
-            }
+        }
+        else
+        {
+            Gun.isFiring = false;
         }
     }
 
