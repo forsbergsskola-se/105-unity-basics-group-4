@@ -14,7 +14,7 @@ public class GunScript : MonoBehaviour
     public bool autoFire;
     private int bulletsLeft, bulletsShot;
     
-    //bools
+    //booLEANs
     private bool shooting, readyToShoot, reloading;
     
     //references
