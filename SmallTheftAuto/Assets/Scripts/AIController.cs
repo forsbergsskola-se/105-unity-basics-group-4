@@ -19,7 +19,7 @@ public class AIController : MonoBehaviour
         if (agent != null)
         {
             agent.speed = speed;
-            agent.SetDestination(RandomNavMeshLocation);
+            agent.SetDestination(RandomNavMeshLocation());
         }
     }
 
