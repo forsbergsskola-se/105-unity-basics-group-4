@@ -1,5 +1,5 @@
 using System;
-/*using UnityEngine;
+using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
 
@@ -19,7 +19,7 @@ public class AIController : MonoBehaviour
         if (agent != null)
         {
             agent.speed = speed;
-            agent.SetDestination(RandomNavMeshLocation);
+            agent.SetDestination(RandomNavMeshLocation());
         }
     }
 
@@ -44,4 +44,3 @@ public class AIController : MonoBehaviour
         return finalPosition;
     }
 }
-*/
