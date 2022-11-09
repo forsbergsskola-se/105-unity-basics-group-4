@@ -86,7 +86,7 @@ public class Vehicle : MonoBehaviour, ITakeDamage
         }*/
     }
 
-    void damagetesting()
+    void damagetesting() //todo: remove in final product
     {
         if (Input.GetKeyDown(KeyCode.B))
         {
