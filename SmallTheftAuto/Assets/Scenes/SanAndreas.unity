@@ -2825,6 +2825,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1607793721, guid: 3434bb444e855344faec11163d974711, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5259223890150380318, guid: 3434bb444e855344faec11163d974711, type: 3}
       propertyPath: crashspeeddetector
       value: 200
@@ -2879,7 +2883,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7303052310702598494, guid: 3434bb444e855344faec11163d974711, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 51.04
+      value: -5.35
       objectReference: {fileID: 0}
     - target: {fileID: 7303052310702598494, guid: 3434bb444e855344faec11163d974711, type: 3}
       propertyPath: m_LocalPosition.y
