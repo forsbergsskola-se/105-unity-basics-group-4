@@ -29,6 +29,16 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        //Shooting controll
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            Gun.isFiring = true;
+        }
+        else
+        {
+            Gun.isFiring = false;
+        }
+        
         if (vehicle.PlayerIsInCar())
         {
             accualPosition = carPosition;
@@ -43,15 +53,7 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, 5, rb.velocity.z);
         }
         
-        //Shooting controll
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            Gun.isFiring = true;
-        }
-        else
-        {
-            Gun.isFiring = false;
-        }
+       
     }
 
     // Update is called once per frame
