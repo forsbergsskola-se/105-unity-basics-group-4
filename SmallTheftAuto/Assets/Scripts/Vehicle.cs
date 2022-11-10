@@ -41,7 +41,7 @@ public class Vehicle : MonoBehaviour, ITakeDamage
         damagetesting();
     }
 
-    bool PlayerIsInCar()
+    public bool PlayerIsInCar()
     {
         if (player.activeInHierarchy)
         {
