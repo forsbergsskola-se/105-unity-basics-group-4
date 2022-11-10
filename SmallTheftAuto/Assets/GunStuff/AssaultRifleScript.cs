@@ -10,42 +10,40 @@
         public float timeBetweenShots;
         private float shotCounter;
         public Transform firePoint;
-        public float burstFire;
-        public float burstDelay;
-        public float burstTimer;
+        public int burstFire;
         int daddy;
-        void Start()
+        
+        IEnumerator Burst()
         {
-            shotCounter = timeBetweenShots;
+            for (int i = 0; i < burstFire; i++)
+            {
+                BulletControll newBullet = Instantiate(bullet, firePoint.position, firePoint.rotation);
+                newBullet.speed = bulletSpeed;
+                print("GUNFIRED:D");
+                yield return new WaitForSeconds(0.1f);
+            }
+           
         }
+
         
         void Update()
         {
-            shotCounter -= Time.deltaTime;
-            if(playermovement.isFiring)
+            shotCounter += Time.deltaTime;
+            if (playermovement.autoFire)
             {
-                if (shotCounter <= 0)
+                if (shotCounter >= timeBetweenShots)
                 {
-                    while (burstFire > daddy)
-                    {
-                        burstTimer += Time.deltaTime;
-                        if (burstTimer > burstDelay)
-                        {
-                            daddy++;
-                            burstTimer = 0;
-                            BulletControll newBullet = Instantiate(bullet, firePoint.position, firePoint.rotation);
-                            newBullet.speed = bulletSpeed;
-                            print("GUNFIRED:D");
-                        }
-                    }
-                    daddy = 0;
+                    StartCoroutine(Burst());
+                    shotCounter = 0;
                 }
-            }
-            else
-            {
-                shotCounter = 0;
+                
             }
         }
-        }
+    }
+
+                
+            
+        
+        
 
 

@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform carPosition;
     public Vehicle vehicle;
     public bool isFiring;
-
+    public bool autoFire;
     void Start()
     {
         accualPosition = transform;
@@ -38,6 +38,16 @@ public class PlayerMovement : MonoBehaviour
         {
             isFiring = false;
         }
+        
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+            autoFire = true;
+        }
+        else
+        {
+            autoFire = false;
+        }
+        
         
         if (vehicle.PlayerIsInCar())
         {
