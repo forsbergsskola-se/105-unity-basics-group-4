@@ -547,6 +547,9 @@ MonoBehaviour:
   cam: {fileID: 972241393}
   rotationSmoothness: 0.3
   Gun: {fileID: 471932493}
+  accualPosition: {fileID: 0}
+  carPosition: {fileID: 0}
+  vehicle: {fileID: 0}
 --- !u!4 &515943115 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2599546879074581545, guid: 3317abe6815c23c4d8748d2b31f56cde, type: 3}
@@ -1149,7 +1152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 515943105}
   offset: {x: 0, y: 5, z: 0}
-  smoothSpeed: 0.9
+  smoothSpeed: 0.2
   carZoom: 10
 --- !u!1 &983182050
 GameObject:
@@ -1188,7 +1191,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -10, y: 10}
-  m_SizeDelta: {x: 300, y: 300}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &983182052
 MonoBehaviour:
@@ -2296,7 +2299,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 514190e9acffcfe42b39543c42d59476, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 515943115}
+  player: {fileID: 515943105}
+  offset: {x: 0, y: 500, z: 0}
 --- !u!1001 &1724591049
 PrefabInstance:
   m_ObjectHideFlags: 0
