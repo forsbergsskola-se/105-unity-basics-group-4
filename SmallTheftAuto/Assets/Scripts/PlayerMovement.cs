@@ -17,11 +17,11 @@ public class PlayerMovement : MonoBehaviour
     private float velocity;
     public float rotationSmoothness;
     private float yAngle;
-    public GunController Gun;
     public Transform accualPosition;
     public Transform carPosition;
     public Vehicle vehicle;
-    
+    public bool isFiring;
+
     void Start()
     {
         accualPosition = transform;
@@ -32,11 +32,11 @@ public class PlayerMovement : MonoBehaviour
         //Shooting controll
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Gun.isFiring = true;
+            isFiring = true;
         }
         else
         {
-            Gun.isFiring = false;
+            isFiring = false;
         }
         
         if (vehicle.PlayerIsInCar())
