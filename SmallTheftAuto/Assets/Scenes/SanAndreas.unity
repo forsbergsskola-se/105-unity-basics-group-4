@@ -2825,6 +2825,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5259223890150380318, guid: 3434bb444e855344faec11163d974711, type: 3}
+      propertyPath: crashspeeddetector
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 7242714682156968238, guid: 3434bb444e855344faec11163d974711, type: 3}
       propertyPath: m_RootOrder
       value: 3

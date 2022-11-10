@@ -16,16 +16,27 @@ public class Vehicle : MonoBehaviour, ITakeDamage
     public GameObject firefab;
     public GameObject explofab;
     private bool BurningDownRunning;
+    private Rigidbody rigbod;
+    public Vector3 lastvelocity;
+    public float crashspeeddetector;
     private void Start()
     {
         player = FindObjectOfType<PlayerMovement>().gameObject;
         playerstats = FindObjectOfType<PlayerStats>();
         carMovement = GetComponent<CarMovementScript>();
         Health = MaxHealth;
+
+        rigbod = GetComponent<Rigidbody>();
+        lastvelocity = rigbod.velocity;
     }
 
-    void Update()
+    void FixedUpdate()
     {
+        Vector3 velocity = rigbod.velocity;
+        float speeddif = Mathf.Abs((velocity - lastvelocity).magnitude) / Time.fixedDeltaTime;
+        if (speeddif > crashspeeddetector)
+        { takedamage(25);}
+        lastvelocity = velocity;
         EnterCarButtonPressed();
         damagetesting();
     }
