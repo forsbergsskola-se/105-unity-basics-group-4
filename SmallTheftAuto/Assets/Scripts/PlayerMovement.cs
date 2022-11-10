@@ -18,27 +18,15 @@ public class PlayerMovement : MonoBehaviour
     public float rotationSmoothness;
     private float yAngle;
     public GunController Gun;
-    public Transform accuallPosition;
-    public Transform carPosition;
-    public Vehicle vehicle;
+    
     
     void Start()
     {
-        accuallPosition = transform;
         
     }
 
     void Update()
     {
-        if (vehicle.PlayerIsInCar())
-        {
-            accuallPosition = carPosition;
-        }
-        else
-        {
-            accuallPosition = transform;
-        }
-        
         if (Input.GetKeyDown(KeyCode.Space))
         {
             rb.velocity = new Vector3(rb.velocity.x, 5, rb.velocity.z);

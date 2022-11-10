@@ -11,7 +11,6 @@ public class CarMovementScript : MonoBehaviour
     public Rigidbody rigidBody;
 
     public WheelCheck wheelCheck;
-    public float downForce;
 
     void FixedUpdate()
     {
@@ -25,16 +24,7 @@ public class CarMovementScript : MonoBehaviour
         }
         transform.Rotate(0f, Input.GetAxis("Horizontal") * rotationSpeed, 0f); 
 
-        rigidBody.AddForce(Vector3.down * downForce);
+            
         
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            transform.rotation = Quaternion.LookRotation(transform.forward, Vector3.up*0);
-            transform.position = new Vector3(transform.position.x, transform.position.y+2, transform.position.z);
-        }
     }
 }
