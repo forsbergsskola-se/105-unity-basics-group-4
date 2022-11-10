@@ -1152,7 +1152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 515943105}
   offset: {x: 0, y: 5, z: 0}
-  smoothSpeed: 0.9
+  smoothSpeed: 0.2
   carZoom: 10
 --- !u!1 &983182050
 GameObject:
