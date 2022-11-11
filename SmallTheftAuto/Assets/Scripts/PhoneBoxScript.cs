@@ -44,6 +44,13 @@ public class PhoneBoxScript : MonoBehaviour
                   }
                   
               }
+              else
+              {
+                  for (int i = 0; i < buttonDisplay.Length; i++)
+                  {
+                      buttonDisplay[i].SetText("Already on a quest!");
+                  }
+              }
 
         }
 
@@ -91,7 +98,6 @@ public class PhoneBoxScript : MonoBehaviour
         {
             quest = displayQuest[button];
             activeQuestUI.SetText(quest.name);
-            print("Changing quests.. ( only happens once )");
         }
         
     }
@@ -155,6 +161,7 @@ public class CrashCarQuest : Quest, IClearable
     {
         if (playerStats.CarsDestroyed >= crashAmount)
         {
+            playerStats.CarsDestroyed = 0;
             return true;
         }
 
