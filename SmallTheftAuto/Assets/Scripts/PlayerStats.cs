@@ -33,6 +33,16 @@ public class PlayerStats : MonoBehaviour, ITakeDamage
     {
         currentHealth -= damagedealt;
         healthBar.SetHealth(currentHealth);
+        if (currentHealth <= 0){youaredead();}
+    }
+
+    public void youaredead()
+    {
+        GameObject playerbody = gameObject;
+        playerbody.transform.position = new Vector3(2, 0, 1);
+        money /= 2;
+        currentHealth = 100;
+        //add 'WASTED' text here
     }
 
     public void CarDestroyed()
