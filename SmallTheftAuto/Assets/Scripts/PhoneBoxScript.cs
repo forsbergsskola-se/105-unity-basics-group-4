@@ -145,7 +145,7 @@ public class CrashCarQuest : Quest, IClearable
 
     public CrashCarQuest()
     {
-        crashAmount = Random.Range(1, 2);
+        crashAmount = Random.Range(1, 5);
         reward = 10 * crashAmount;
         name = $"Crash {crashAmount} cars to earn {reward} money";
         playerStats = Object.FindObjectOfType<PlayerStats>();
