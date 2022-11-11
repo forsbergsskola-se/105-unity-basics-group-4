@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
@@ -16,19 +17,53 @@ public class PlayerMovement : MonoBehaviour
     private float velocity;
     public float rotationSmoothness;
     private float yAngle;
-    
-    
+    public Transform accualPosition;
+    public Transform carPosition;
+    public Vehicle vehicle;
+    public bool isFiring;
+    public bool autoFire;
     void Start()
     {
-        
+        accualPosition = transform;
     }
 
     void Update()
     {
+        //Shooting controll
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            isFiring = true;
+        }
+        else
+        {
+            isFiring = false;
+        }
+        
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+            autoFire = true;
+        }
+        else
+        {
+            autoFire = false;
+        }
+        
+        
+        if (vehicle.PlayerIsInCar())
+        {
+            accualPosition = carPosition;
+        }
+        else
+        {
+            accualPosition = transform;
+        }
+        
         if (Input.GetKeyDown(KeyCode.Space))
         {
             rb.velocity = new Vector3(rb.velocity.x, 5, rb.velocity.z);
         }
+        
+       
     }
 
     // Update is called once per frame
