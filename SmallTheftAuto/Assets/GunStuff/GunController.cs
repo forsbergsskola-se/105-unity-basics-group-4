@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class GunController : MonoBehaviour
 {
-
-    public bool isFiring;
+    public PlayerMovement playermovement;
     public BulletControll bullet;
     public float bulletSpeed;
     public float timeBetweenShots;
@@ -19,7 +18,7 @@ public class GunController : MonoBehaviour
     
     void Update()
     {
-        if(isFiring)
+        if(playermovement.isFiring)
         {
             shotCounter -= Time.deltaTime;
             if (shotCounter <= 0)

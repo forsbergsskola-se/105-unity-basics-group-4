@@ -7,7 +7,6 @@ public class GameHandlerScript : MonoBehaviour
     
     void Start()
     {
-        print(PlayerPrefs.GetFloat("Health"));
-        print(PlayerPrefs.GetInt("Money"));
+
     }
 }

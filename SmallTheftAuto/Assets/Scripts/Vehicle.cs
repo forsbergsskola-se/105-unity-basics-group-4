@@ -35,13 +35,14 @@ public class Vehicle : MonoBehaviour, ITakeDamage
         Vector3 velocity = rigbod.velocity;
         float speeddif = Mathf.Abs((velocity - lastvelocity).magnitude) / Time.fixedDeltaTime;
         if (speeddif > crashspeeddetector)
-        { takedamage(25);}
+        { takedamage(Convert.ToInt32((speeddif-crashspeeddetector)/10));}
         lastvelocity = velocity;
         EnterCarButtonPressed();
         damagetesting();
+        
     }
 
-    bool PlayerIsInCar()
+   public bool PlayerIsInCar()
     {
         if (player.activeInHierarchy)
         {
@@ -64,7 +65,7 @@ public class Vehicle : MonoBehaviour, ITakeDamage
     void EnterCarButtonPressed()
     {
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyUp(KeyCode.F))
         {
             if (PlayerIsInCar()) // Already in Car, so get out of car
                 LeaveCar();
