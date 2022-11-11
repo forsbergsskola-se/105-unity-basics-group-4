@@ -10,8 +10,6 @@ public class PedestrianSpawner : MonoBehaviour
     public GameObject pedestrianPrefab;
     public int maxPedestrians;
     private int _currentPedestrians;
-    public Transform spawnerArea;
-    
     void Start()
     {
         
@@ -23,7 +21,7 @@ public class PedestrianSpawner : MonoBehaviour
         if (_currentPedestrians < maxPedestrians)
         {
             _currentPedestrians++;
-            Instantiate(pedestrianPrefab, new Vector3(Random.Range(0,100), 0, Random.Range(0,100)), quaternion.identity);
+            Instantiate(pedestrianPrefab, new Vector3(Random.Range(-100,100), 0, Random.Range(-100,100)), quaternion.identity);
         }
     }
 }

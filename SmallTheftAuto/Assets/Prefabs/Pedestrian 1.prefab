@@ -136,6 +136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef46cd147b68dc940925cb0a1dbbd27b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 0}
+  agent: {fileID: 8052229581541513719}
   speed: 1
   walkRadius: 25
