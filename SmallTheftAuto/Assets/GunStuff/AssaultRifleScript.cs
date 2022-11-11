@@ -12,6 +12,7 @@
         public Transform firePoint;
         public int burstFire;
         int daddy;
+        //^^^^^^^^????????
         
         IEnumerator Burst()
         {
