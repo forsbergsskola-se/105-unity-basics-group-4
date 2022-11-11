@@ -1369,7 +1369,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ab6734460ea21ec4fb81a9bc9f623c7b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7b885579efc700e4ea53bccbb1b43a8f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -3422,6 +3422,10 @@ PrefabInstance:
     - target: {fileID: 6551788205226704460, guid: a2d6d59b2362dd84a90f1a17c0cb3968, type: 3}
       propertyPath: m_Name
       value: Shotgun
+      objectReference: {fileID: 0}
+    - target: {fileID: 6551788205226704460, guid: a2d6d59b2362dd84a90f1a17c0cb3968, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6551788205226704463, guid: a2d6d59b2362dd84a90f1a17c0cb3968, type: 3}
       propertyPath: m_RootOrder
