@@ -19,7 +19,6 @@
             {
                 BulletControll newBullet = Instantiate(bullet, firePoint.position, firePoint.rotation);
                 newBullet.speed = bulletSpeed;
-                print("GUNFIRED:D");
                 yield return new WaitForSeconds(0.1f);
             }
            
