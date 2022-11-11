@@ -5,6 +5,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
 
 public class PhoneBoxScript : MonoBehaviour
@@ -12,13 +13,20 @@ public class PhoneBoxScript : MonoBehaviour
     public Transform player;
     public int phoneDistance;
     public GameObject buttonHolder;
+    public TMP_Text activeQuestUI;
     public Quest quest;
+    public Quest[] displayQuest = new Quest[3];
+    public PlayerStats playerStats;
 
     private string questName;
     public bool HasNoActiveQuest => quest?.ClearConditon() != false;
+    private TMP_Text[] buttonDisplay;
+
     void Start()
     {
         buttonHolder.SetActive(false);
+        buttonDisplay = buttonHolder.GetComponentsInChildren<TMP_Text>();
+        
     }
 
     void Update()
@@ -29,16 +37,21 @@ public class PhoneBoxScript : MonoBehaviour
               buttonHolder.SetActive(true);
               if (HasNoActiveQuest)
               {
-                  quest = GetQuest();
-                  TMP_Text[] buttonDisplay = buttonHolder.GetComponentsInChildren<TMP_Text>();
-                  buttonDisplay[0].SetText(quest.name);
+                  for (int i = 0; i < buttonDisplay.Length; i++)
+                  {
+                      displayQuest[i] = GetQuest();
+                      buttonDisplay[i].SetText(displayQuest[i].name);
+                  }
+                  
               }
-              
+
         }
 
         if (quest?.ClearConditon() == true)
         {
             //Logic when quest is completed. rewards,xp,money.etc
+            playerStats.money += quest.reward;
+            quest = null;
         }
     }
 
@@ -47,7 +60,7 @@ public class PhoneBoxScript : MonoBehaviour
         int random = Random.Range(1, 5);
         if (random == 1)
         {
-            return new KillingQuest();
+            return new CrashCarQuest();
         }
         if (random == 2)
         {
@@ -55,7 +68,7 @@ public class PhoneBoxScript : MonoBehaviour
         }
         if (random == 3)
         {
-            return new KillingQuest();
+            return new CrashCarQuest();
 
         }
         if (random == 4)
@@ -71,9 +84,16 @@ public class PhoneBoxScript : MonoBehaviour
 
     }
 
-    public void SelectQuest(Button button)
+    public void SelectQuest(int button)
     {
         buttonHolder.SetActive(false);
+        if (HasNoActiveQuest)
+        {
+            quest = displayQuest[button];
+            activeQuestUI.SetText(quest.name);
+            print("Changing quests.. ( only happens once )");
+        }
+        
     }
 
 }
@@ -97,18 +117,43 @@ public abstract class Quest : IClearable
 
 public class KillingQuest : Quest, IClearable
 {
-    public int victims = 3;
+    int victims;
 
 
     public KillingQuest()
     {
+        victims = Random.Range(3, 10);
+        reward = 5*victims;
         name = $"Kill {victims} people to earn {reward} money.";
-        reward = 49;
     }
     
     public override bool ClearConditon()
     {
         if (victims == 4)
+        {
+            return true;
+        }
+
+        return false;
+    }
+}
+
+public class CrashCarQuest : Quest, IClearable
+{
+    public PlayerStats playerStats;
+    private int crashAmount;
+
+    public CrashCarQuest()
+    {
+        crashAmount = Random.Range(1, 2);
+        reward = 10 * crashAmount;
+        name = $"Crash {crashAmount} cars to earn {reward} money";
+        playerStats = Object.FindObjectOfType<PlayerStats>();
+    }
+    
+    public override bool ClearConditon()
+    {
+        if (playerStats.CarsDestroyed >= crashAmount)
         {
             return true;
         }
